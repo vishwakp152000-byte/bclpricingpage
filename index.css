@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    /* BCL Brand Palette */
+    --primary: #7E1AFD;
+    /* BCL Purple */
+    --primary-dark: #6215C5;
+    --primary-light: #F4F0FF;
+    --secondary: #101828;
+    /* Deep Gray/Black */
+    --accent: #E9D7FE;
+    --text-main: #1D2939;
+    --text-dim: #475467;
+    --bg-light: #F9FAFB;
+    --bg-white: #FFFFFF;
+    --border-color: #EAECF0;
+
+    /* Spacing & Sizes */
+    --section-padding: 80px 20px;
+    --container-width: 1100px;
+    --border-radius: 8px;
+
+    /* Transitions */
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Outfit', sans-serif;
+    background: var(--bg-white);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Nav Bar */
+.nav-bar {
+    height: 80px;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section - Refined for BCL */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(rgba(126, 26, 253, 0.05), rgba(255, 255, 255, 0));
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-brand {
+    color: var(--primary);
+}
+
+/* Pricing Grid - White & Purple Theme */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    background: var(--bg-white);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.pricing-card {
+    padding: 3rem;
+}
+
+.pricing-card.main {
+    background: var(--bg-white);
+    border-right: 1px solid var(--border-color);
+}
+
+.pricing-card.secondary {
+    background: var(--bg-light);
+}
+
+.price-tag {
+    font-size: 3rem;
+    color: var(--secondary);
+    margin: 1rem 0;
+}
+
+.price-tag span {
+    font-size: 1rem;
+    color: var(--text-dim);
+}
+
+/* Inclusions & Icons */
+.check-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.check-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.check-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* Buttons - Primary BCL */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(126, 26, 253, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-dim);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Sections */
+section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Guarantee Section - BCL Style */
+.guarantee-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--primary-light);
+    border: 1px solid var(--accent);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+}
+
+.seal-img {
+    width: 80px;
+}
+
+/* FAQ Section Styling */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .icon {
+    transform: rotate(45deg);
+    color: var(--primary);
+}
+
+.icon {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
